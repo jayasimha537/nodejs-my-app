@@ -31,7 +31,7 @@ pipeline {
       }
     }
     
-    stage('Imdaging') {
+    stage('Imaging') {
       steps {
          sh 'docker build -t mynginx:1.1 -t mynginx:latest .'
       }
