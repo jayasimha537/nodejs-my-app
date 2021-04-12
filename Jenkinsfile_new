@@ -9,7 +9,7 @@ pipeline {
                 def branch_nem = scm.branches[0].name
                 echo ${branch_nem}
                 }
-                printenv
+                
             }
         }
     }
