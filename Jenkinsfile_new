@@ -1,23 +1,14 @@
 pipeline {
-  agent any
-    
-  
-  stages {
-        
-    stage('first stage') {
-      echo 'first stage'
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                def branch_nem = scm.branches[0].name
+                echo ${branch_nem}
+                printenv
+            }
+        }
     }
-        
-    stage('second stage') {
-      echo 'second stage'
-    }
-    
-
-    
-
-
-    
-
-    
-  }
 }
