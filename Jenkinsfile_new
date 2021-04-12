@@ -5,8 +5,10 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+                script {
                 def branch_nem = scm.branches[0].name
                 echo ${branch_nem}
+                }
                 printenv
             }
         }
