@@ -11,8 +11,9 @@ pipeline {
                     branch_nem = branch_nem.split("\\*/")[1]
                 }
                 echo branch_nem
-
+                testvar (var1: branch_nem )
                 }
+                
                 
             }
         }
