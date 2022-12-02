@@ -2,7 +2,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{values.componentName | dump}}
+  name: ${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
   {%- if values.description %}
   description: ${{values.description | dump}}
   {%- endif %}
