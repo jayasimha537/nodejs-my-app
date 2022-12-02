@@ -9,7 +9,7 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     argocd/app-name: ${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
-    backstage.io/kubernetes-id: ${{values.componentName | dump}}
+    backstage.io/kubernetes-id: ${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
   links:
     - url: https://localhost:8080/applications/argocd/${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
       title: ArgoCD
