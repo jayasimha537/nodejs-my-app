@@ -1,0 +1,35 @@
+
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ${{values.componentName | dump}}
+spec:
+  owner: guests
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.componentName | dump}}
+  {%- if values.description %}
+  description: ${{values.description | dump}}
+  {%- endif %}
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: ${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
+    backstage.io/kubernetes-id: ${{values.componentName | dump}}
+  links:
+    - url: https://localhost:8080/applications/argocd/${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
+      title: ArgoCD
+      icon: cloud
+  tags:
+    - golang
+    - ${{values.system | dump}}
+    - ${{values.type | dump}}
+    - ${{values.lifecycle | dump}}
+spec:
+  system: ${{values.componentName | dump}}
+  type:  service
+  lifecycle: ${{values.lifecycle | dump}}
+  owner: guests
